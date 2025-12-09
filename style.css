@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input {
+    margin: 5px;
+    padding: 8px;
+}
+
+.screen-container {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.game-layout {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#info div {
+    margin: 5px 0;
+}
+
+#board-container {
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+#lines-canvas {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#board {
+    display: inline-grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    gap: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    position: relative;
+    background: transparent;
+}
+
+.station {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.station.selected {
+    border: 3px solid yellow;
+}
+
+.station.train::after {
+    content: '🚂';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 10px;
+}
+
+#train-slider {
+    display: flex;
+    gap: 5px;
+}
+
+#train-slider span {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#train-slider span.active {
+    background: green;
+    color: white;
+}
+
+#message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+}

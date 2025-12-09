@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subways of Budapest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu-screen" class="screen-container">
+        <div class="center-content">
+            <h1>Subways of Budapest</h1>
+            <input type="text" id="player-name" placeholder="Enter name">
+            <button id="start-btn">Start Game</button>
+            <button id="rules-btn">Rules</button>
+        </div>
+    </div>
+
+    <div id="rules-screen" class="screen-container" style="display:none;">
+        <div class="center-content">
+            <h2>Rules</h2>
+            <p>Click stations to draw metro lines, each line must be a straight line, either horizontal or vertical or diagonal.<br>
+                Match card letters, each station has a letter type (A, B, C, D), except for the station with ID 30 (Deák tér), which is a Joker station — it has no letter type; or in other words, it counts as all letters.<br>
+                8 turns per round.<br>
+                4 rounds in total.</p>
+            <button id="back-btn">Back</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen-container" style="display:none;">
+        <div class="game-layout">
+            <div id="board-container">
+                <canvas id="lines-canvas"></canvas>
+                <div id="board"></div>
+            </div>
+            <div id="info">
+                <div>Player: <span id="player-name-display"></span></div>
+                <div>Time: <span id="timer">0:00</span></div>
+                <div>Line: <span id="current-line"></span></div>
+                <div>Round: <span id="round-num">1</span>/4</div>
+                <div>Cards: <span id="cards-count">0</span>/8</div>
+                <div>Current Card: <span id="current-card">-</span></div>
+                <button id="draw-btn">Draw Card</button>
+                <hr>
+                <div><strong>Train Stations:</strong></div>
+                <div id="train-slider">
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>4</span>
+                    <span>6</span>
+                    <span>8</span>
+                    <span>11</span>
+                    <span>14</span>
+                    <span>17</span>
+                    <span>21</span>
+                    <span>25</span>
+                </div>
+                <div>Train Points: <span id="train-points">0</span></div>
+                <hr>
+                <div>Round Score: <span id="round-score">0</span></div>
+                <div>Total Score: <span id="total-score">0</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="end-screen" class="screen-container" style="display:none;">
+        <div class="center-content">
+            <h2>Game Over</h2>
+            <div>Player: <span id="end-player"></span></div>
+            <div>Score: <span id="end-score"></span></div>
+            <div>Time: <span id="end-time"></span></div>
+            <button id="menu-btn">Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
